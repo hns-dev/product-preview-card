@@ -1,0 +1,169 @@
+:root {
+  /* Colors */
+  --dark-cyan: hsl(158, 36%, 37%);
+  --very-dark-cyan: hsl(158, 46%, 20%);
+  --cream: hsl(30, 38%, 92%);
+
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Typography */
+  --font-size: 1rem;
+
+  --ff-Fraunces: "Fraunces", serif;
+  --ff-Montserrat: "Montserrat", sans-serif;
+
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+}
+
+/* ======================== Reset ======================== */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ======================== Customized CSS ======================== */
+body {
+  background-color: var(--cream);
+  font-family: var(--ff-Montserrat);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-500);
+  color: var(--dark-grayish-blue);
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 1rem auto;
+}
+
+/* ======================== Components ======================== */
+/* product card */
+.product {
+  width: 90%;
+  max-width: 700px;
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (min-width: 47em) {
+  .product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product-content {
+  padding: 2rem;
+  align-self: center;
+}
+
+.product-content > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.product .product-category {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-500);
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+}
+
+.product-title {
+  font-family: --ff-Fraunces;
+  font-size: 2.4rem;
+  color: var(--very-dark-blue);
+}
+
+/* price */
+.product-price {
+  display: flex;
+  align-items: center;
+}
+
+.original-price {
+  text-decoration: line-through;
+  font-weight: var(--font-weight-500);
+  margin-left: 1.5rem;
+}
+
+.new-price {
+  color: var(--dark-cyan);
+  font-size: 2rem;
+  font-family: --ff-Fraunces;
+  font-weight: var(--font-weight-700);
+}
+
+/* button */
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  padding-block: 1rem;
+  font-weight: var(--font-weight-700);
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:is(:hover, :focus) {
+  background-color: var(--very-dark-cyan);
+}
