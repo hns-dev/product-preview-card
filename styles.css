@@ -124,7 +124,7 @@ body {
 }
 
 .product-title {
-  font-family: --ff-Fraunces;
+  font-family: var(--ff-Fraunces);
   font-size: 2.4rem;
   color: var(--very-dark-blue);
 }
@@ -144,7 +144,7 @@ body {
 .new-price {
   color: var(--dark-cyan);
   font-size: 2rem;
-  font-family: --ff-Fraunces;
+  font-family: var(--ff-Fraunces);
   font-weight: var(--font-weight-700);
 }
 
